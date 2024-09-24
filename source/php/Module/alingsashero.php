@@ -28,7 +28,6 @@ class alingsashero extends \Modularity\Module {
 		$data = array_merge( $data, (array) \Modularity\Helper\FormatObject::camelCase(
 			get_fields( $this->ID )
 		) );
-
 		return $data;
 	}
 

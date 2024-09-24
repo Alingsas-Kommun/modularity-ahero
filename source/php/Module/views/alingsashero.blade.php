@@ -7,6 +7,11 @@
         ])
             {{ $aHeroText }}
         @endtypography
+        @form([
+        'method' => 'POST',
+        'action' => home_url('/'),
+        'classList' => ['u-width--100', 'a-hero__search-form']
+        ])
         @group(['direction' => 'horizontal', 'classList' => ['u-width--100']])
             @field([
                 'id' => 'a-hero__search-form--field',
@@ -20,17 +25,18 @@
             ])
             @endfield
         @endgroup
-        @if (isset($quickLinks) && is_array($quickLinks))
+        @endform
+        @if (isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks))
             <div class="a-hero__col__buttons">
                 @foreach ($quickLinks as $quickLink)
                     @if (isset($quickLink['link']))
                         @button([
-                            'text' => $quickLink['link']['title'],
-                            'href' => $quickLink['link']['url'],
-                            'target' => $quickLink['link']['target'],
+                            'text' => $quickLink['link']['title'] ?? '',
+                            'href' => $quickLink['link']['url'] ?? '',
+                            'target' => $quickLink['link']['target'] ?? '',
                             'size' => 'md',
-                            'color' => $quickLink['style'],
-                            'style' => $quickLink['filled'] ? 'filled' : 'outlined',
+                            'color' => $quickLink['color'],
+                            'style' => $quickLink['style'],
                             'reversePositions' => true,
                             'classList' => ['u-margin--0'],
                         ])
