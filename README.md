@@ -1,5 +1,5 @@
 ---
-title: "README"
+title: 'README'
 date: 2021-05-27
 draft: false
 layout: default
@@ -7,6 +7,7 @@ parent: Boilerplates
 ---
 
 <!-- SHIELDS -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -14,15 +15,9 @@ parent: Boilerplates
 [![License][license-shield]][license-url]
 
 <h3>Alingsas Hero</h3>
-<p>
-  An interactive hero component for Modularity
-  <br />
-  <a href="https://github.com/v7ltz/modularity-alingsashero/issues">Report Bug</a>
-  ·
-  <a href="https://github.com/v7ltz/modularity-alingsashero/issues">Request Feature</a>
-</p>
 
 ## Table of Contents
+
 - [Table of Contents](#table-of-contents)
 - [About Alingsas Hero](#about-Alingsas Hero)
   - [Built With](#built-with)
@@ -44,10 +39,10 @@ Here's a blank template to get started:
 
 ### Built With
 
-* PHP
-* NPM
-* Webpack
-* Modularity
+- PHP
+- NPM
+- Webpack
+- Modularity
 
 ## Getting Started
 
@@ -56,29 +51,41 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them (mac os).
-* composer
+
+- composer
+
 ```sh
 brew install composer
 ```
-* npm
+
+- npm
+
 ```sh
 brew install node
 ```
-* modularity
+
+- modularity
+
 ```sh
 composer require helsingborg-stad/modularity
 ```
+
 ### Installation
 
 1. Clone the repo
+
 ```sh
-git clone https://github.com/v7ltz/modularity-alingsashero.git
+git clone https://github.com/Alingsas-Kommun/modularity-ahero.git
 ```
+
 2. Install and build NPM packages
+
 ```sh
 npm install && npm run build
 ```
+
 3. Install composer packages
+
 ```sh
 composer install
 ```
@@ -115,17 +122,5 @@ Distributed under the [MIT License][license-url].
 
 - [othneildrew Best README Template](https://github.com/othneildrew/Best-README-Template)
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/v7ltz/modularity-alingsashero.svg?style=flat-square
-[contributors-url]: https://github.com/v7ltz/modularity-alingsashero/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/v7ltz/modularity-alingsashero.svg?style=flat-square
-[forks-url]: https://github.com/v7ltz/modularity-alingsashero/network/members
-[stars-shield]: https://img.shields.io/github/stars/v7ltz/modularity-alingsashero.svg?style=flat-square
-[stars-url]: https://github.com/v7ltz/modularity-alingsashero/stargazers
-[issues-shield]: https://img.shields.io/github/issues/v7ltz/modularity-alingsashero.svg?style=flat-square
-[issues-url]: https://github.com/v7ltz/modularity-alingsashero/issues
-[license-shield]: https://img.shields.io/github/license/v7ltz/modularity-alingsashero.svg?style=flat-square
-[license-url]: https://raw.githubusercontent.com/v7ltz/modularity-alingsashero/master/LICENSE
-[product-screenshot]: images/screenshot.png
