@@ -1,20 +1,20 @@
 {
-    "name": "v7ltz/modularity-alingsashero",
-    "description": "An interactive hero component for Modularity",
-    "type": "wordpress-plugin",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Consid",
-            "email": "viktor.schultz@consid.se"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {},
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/v7ltz/modularity-alingsashero.git"
-        }
-    ]
+  "name": "consid/modularity-alingsashero",
+  "description": "An interactive hero component for Modularity",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Consid",
+      "email": "email@provider.net"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Alingsas-Kommun/modularity-ahero"
+    }
+  ]
 }
