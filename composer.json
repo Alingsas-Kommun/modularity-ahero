@@ -1,11 +1,11 @@
 {
-  "name": "consid/modularity-alingsashero",
+  "name": "alingsas-kommun/modularity-alingsashero",
   "description": "An interactive hero component for Modularity",
   "type": "wordpress-plugin",
   "license": "MIT",
   "authors": [
     {
-      "name": "Consid",
+      "name": "Alingsas Kommun",
       "email": "email@provider.net"
     }
   ],
