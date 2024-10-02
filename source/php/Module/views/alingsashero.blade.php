@@ -5,7 +5,7 @@
                 'variant' => 'h1',
                 'classList' => ['page-header__title']
             ])
-                {{ $customBlockTitle }}
+                {{ $aHeroText ?? '' }}
             @endtypography
             @form([
             'method' => 'POST',

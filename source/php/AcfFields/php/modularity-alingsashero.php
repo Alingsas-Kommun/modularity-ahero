@@ -9,6 +9,26 @@ add_action( 'acf/include_fields', function () {
 		'title'                 => 'Alingsas Hero',
 		'fields'                => array(
 			array(
+				'key'               => 'field_66f17c3e932aa',
+				'label'             => 'Herotitel',
+				'name'              => 'a_hero_text',
+				'aria-label'        => '',
+				'type'              => 'text',
+				'instructions'      => '',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => array(
+					'width' => '',
+					'class' => '',
+					'id'    => '',
+				),
+				'default_value'     => '',
+				'maxlength'         => '',
+				'placeholder'       => '',
+				'prepend'           => '',
+				'append'            => '',
+			),
+			array(
 				'key'               => 'field_66f17f106d799',
 				'label'             => 'Bild',
 				'name'              => 'a_hero_image',
