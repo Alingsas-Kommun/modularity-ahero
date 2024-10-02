@@ -10,7 +10,7 @@ add_action( 'acf/include_fields', function () {
 		'fields'                => array(
 			array(
 				'key'               => 'field_66f17f106d799',
-				'label'             => 'Image',
+				'label'             => 'Bild',
 				'name'              => 'a_hero_image',
 				'aria-label'        => '',
 				'type'              => 'image',
@@ -37,7 +37,7 @@ add_action( 'acf/include_fields', function () {
 			),
 			array(
 				'key'               => 'field_66f17c58932ab',
-				'label'             => 'Search placeholder',
+				'label'             => 'Sök platshållartext',
 				'name'              => 'a_hero_search_placeholder',
 				'aria-label'        => '',
 				'type'              => 'text',
@@ -57,7 +57,7 @@ add_action( 'acf/include_fields', function () {
 			),
 			array(
 				'key'                           => 'field_66f27a0c23cf3',
-				'label'                         => 'Quick links',
+				'label'                         => 'Snabblänkar',
 				'name'                          => 'quick_links',
 				'aria-label'                    => '',
 				'type'                          => 'repeater',
@@ -75,12 +75,12 @@ add_action( 'acf/include_fields', function () {
 				'min'                           => 0,
 				'max'                           => 0,
 				'collapsed'                     => '',
-				'button_label'                  => 'Add link',
+				'button_label'                  => 'Lägg till knapp',
 				'rows_per_page'                 => 20,
 				'sub_fields'                    => array(
 					array(
 						'key'               => 'field_66f27a1c23cf4',
-						'label'             => 'Button',
+						'label'             => 'Knapp',
 						'name'              => 'link',
 						'aria-label'        => '',
 						'type'              => 'link',
@@ -97,11 +97,11 @@ add_action( 'acf/include_fields', function () {
 					),
 					array(
 						'key'               => 'field_66f283611fe19',
-						'label'             => 'Button color',
+						'label'             => 'Knappfärg',
 						'name'              => 'color',
 						'aria-label'        => '',
 						'type'              => 'radio',
-						'instructions'      => 'Attention and outlined together are not supported because of contrast issues.',
+						'instructions'      => 'Uppmärksam och Kantline ihop stöds inte på grund utav kontrasten',
 						'required'          => 0,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
@@ -110,9 +110,9 @@ add_action( 'acf/include_fields', function () {
 							'id'    => '',
 						),
 						'choices'           => array(
-							'attention' => 'Attention',
-							'primary'   => 'Primary',
-							'secondary' => 'Secondary',
+							'attention' => 'Uppmärksam',
+							'primary'   => 'Primär',
+							'secondary' => 'Sekundär',
 						),
 						'default_value'     => 'primary',
 						'return_format'     => 'value',
@@ -124,7 +124,7 @@ add_action( 'acf/include_fields', function () {
 					),
 					array(
 						'key'               => 'field_66f2845a1fe1a',
-						'label'             => 'Filled / Outlined',
+						'label'             => 'Fylld / Kantline',
 						'name'              => 'style',
 						'aria-label'        => '',
 						'type'              => 'radio',
@@ -137,8 +137,8 @@ add_action( 'acf/include_fields', function () {
 							'id'    => '',
 						),
 						'choices'           => array(
-							'filled'   => 'Filled',
-							'outlined' => 'Outlined',
+							'filled'   => 'Fylld',
+							'outlined' => 'Kantlinje',
 						),
 						'default_value'     => 'filled',
 						'return_format'     => 'value',
