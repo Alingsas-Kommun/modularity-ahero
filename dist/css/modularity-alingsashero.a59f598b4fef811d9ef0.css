@@ -85,4 +85,11 @@ a.c-button.c-button__outlined--attention div.code-toolbar > .toolbar span:hover:
   opacity: 0.2;
 }
 
-/*# sourceMappingURL=modularity-alingsashero.542a82e840851e1bc00c.css.map*/
+a.c-button.c-button__outlined--secondary {
+  border: var(--border-width-button) solid var(--c-button-color-secondary !important);
+}
+a.c-button.c-button__outlined--secondary span {
+  color: black !important;
+}
+
+/*# sourceMappingURL=modularity-alingsashero.a59f598b4fef811d9ef0.css.map*/
