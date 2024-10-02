@@ -66,3 +66,31 @@
     }
   }
 }
+
+a.c-button {
+  &.attention {
+  }
+}
+
+a.c-button.c-button__filled--attention {
+  background-color: #fad945;
+  color: #000;
+  border: none;
+  outline: none;
+  filter: unset;
+}
+a.c-button.c-button__outlined--attention {
+  background-color: #fad945;
+  color: #000;
+  border: none;
+  outline: none;
+  filter: unset;
+
+  &:hover::after,
+  div.code-toolbar > .toolbar a:hover::after,
+  div.code-toolbar > .toolbar button:hover::after,
+  div.code-toolbar > .toolbar span:hover::after {
+    background: var(--color-white, #ffffff);
+    opacity: 0.2;
+  }
+}

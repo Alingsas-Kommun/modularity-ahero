@@ -101,7 +101,7 @@ add_action( 'acf/include_fields', function () {
 						'name'              => 'color',
 						'aria-label'        => '',
 						'type'              => 'radio',
-						'instructions'      => '',
+						'instructions'      => 'Attention and outlined together are not supported because of contrast issues.',
 						'required'          => 0,
 						'conditional_logic' => 0,
 						'wrapper'           => array(
@@ -110,7 +110,7 @@ add_action( 'acf/include_fields', function () {
 							'id'    => '',
 						),
 						'choices'           => array(
-							'default'   => 'Default',
+							'attention' => 'Attention',
 							'primary'   => 'Primary',
 							'secondary' => 'Secondary',
 						),
