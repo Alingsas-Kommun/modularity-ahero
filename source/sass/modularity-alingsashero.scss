@@ -89,10 +89,3 @@ a.c-button.c-button__outlined--attention {
     opacity: 0.2;
   }
 }
-
-a.c-button.c-button__outlined--secondary {
-  border: var(--border-width-button) solid var(--c-button-color-secondary!important);
-  span {
-    color: black !important;
-  }
-}
