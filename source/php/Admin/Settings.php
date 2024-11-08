@@ -5,7 +5,7 @@ namespace AlingsasComponents\Admin;
 class Settings
 {
     public function __construct() {
-        add_action('acf/init', array($this, 'registerSettings'));
+        //add_action('acf/init', array($this, 'registerSettings'));
     }
 
     /**

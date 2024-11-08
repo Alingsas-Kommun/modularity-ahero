@@ -14,16 +14,33 @@
             ])
             @group(['direction' => 'horizontal', 'classList' => ['u-width--100']])
                 @field([
+                    'type' => 'text',
                     'id' => 'a-hero__search-form--field',
-                    'type' => 'search',
                     'name' => 's',
-                    'required' => true,
-                    'placeholder' => $aHeroSearchPlaceholder,
-                    'classList' => ['u-flex-grow--1'],
-                    'size' => 'md',
-                    'icon' => ['icon' => 'search']
+                    'required' => false,
+                    'radius' => 'sm',
+                    'label' => $aHeroSearchPlaceholder,
+                    'hideLabel' => true,
+                    'icon' => ['icon' => ''],
+                    'classList' => ['u-flex-grow--1', 'u-box-shadow--1']
                 ])
                 @endfield
+
+                @button([
+                    'classList' => [
+                        'a-hero__search-form__submit-icon',
+                        'c-button--no-disabled-color',
+                    ],
+                    'style' => 'primary',
+                    'type' => 'submit',
+                    'icon' => 'search',
+                    'reversePositions' => true,
+                    'text' => $search,
+                    'attributeList' => [
+                        'aria-label' => $search,
+                    ],
+                ])
+                @endbutton
             @endgroup
             @endform
             @if (isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks))
