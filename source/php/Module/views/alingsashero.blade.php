@@ -8,7 +8,7 @@
                 {{ $aHeroText ?? '' }}
             @endtypography
             @form([
-            'method' => 'POST',
+            'method' => 'GET',
             'action' => home_url('/'),
             'classList' => ['u-width--100', 'a-hero__search-form']
             ])
