@@ -31,6 +31,7 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+
       @container (max-width: 1100px) {
         aspect-ratio: 16 / 9;
       }
@@ -49,45 +50,53 @@
     }
   }
 
-  input[type='search'] {
-    border-radius: 100px;
-    box-shadow: none;
-
-    &:focus {
-      outline: unset;
-    }
-  }
-
-  .c-field__inner {
-    border-radius: 100px;
-  }
-
   form.c-form {
-    div.c-field_focus-styler {
-      border-radius: 100px;
+    .c-group {
+      background-color: var(--c-button-primary-color);
+      border: 2px solid var(--c-button-primary-color);
+      border-radius: calc(var(--base, 8px)* 6);
+    }
+
+    .c-field {
+      background-color: var(--c-button-primary-color);
+      border-bottom-left-radius: calc(var(--base, 8px)* 6);
+      border-top-left-radius: calc(var(--base, 8px)* 6);
+
+      &__inner {
+        border: 0;
+      }
+    }
+
+    .c-button {
+      background-color: var(--c-button-primary-color);
+      border-bottom-right-radius: calc(var(--base, 8px)* 6);
+      border-top-right-radius: calc(var(--base, 8px)* 6);
+      color: white;
+      padding: 0 calc(var(--base, 8px)*3) 0 calc(var(--base, 8px)*2);
     }
   }
-}
 
-a.c-button.c-button__filled--attention {
-  background-color: #fad945;
-  color: #000;
-  border: none;
-  outline: none;
-  filter: unset;
-}
-a.c-button.c-button__outlined--attention {
-  background-color: #fad945;
-  color: #000;
-  border: none;
-  outline: none;
-  filter: unset;
+  a.c-button.c-button__filled--attention {
+    background-color: #fad945;
+    color: #000;
+    border: none;
+    outline: none;
+    filter: unset;
+  }
 
-  &:hover::after,
-  div.code-toolbar > .toolbar a:hover::after,
-  div.code-toolbar > .toolbar button:hover::after,
-  div.code-toolbar > .toolbar span:hover::after {
-    background: var(--color-white, #ffffff);
-    opacity: 0.2;
+  a.c-button.c-button__outlined--attention {
+    background-color: #fad945;
+    color: #000;
+    border: none;
+    outline: none;
+    filter: unset;
+
+    &:hover::after,
+    div.code-toolbar>.toolbar a:hover::after,
+    div.code-toolbar>.toolbar button:hover::after,
+    div.code-toolbar>.toolbar span:hover::after {
+      background: var(--color-white, #ffffff);
+      opacity: 0.2;
+    }
   }
 }

@@ -41,8 +41,7 @@ $acfExportManager = new \AcfExportManager\AcfExportManager();
 $acfExportManager->setTextdomain('modularity-alingsashero');
 $acfExportManager->setExportFolder(ALINGAS_COMPONENTS_PATH . 'source/php/AcfFields/');
 $acfExportManager->autoExport(array(
-    'alingsashero-module' => 'group_61ea7a87e8mmm', //Update with acf id here, module view
-    'alingsashero-settings' => 'group_61ea7a87e8nnn' //Update with acf id here, settings view
+    'module' => 'group_66f17c34c585e',
 ));
 $acfExportManager->import();
 

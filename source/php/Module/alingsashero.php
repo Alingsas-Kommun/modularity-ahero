@@ -3,6 +3,7 @@
 namespace AlingsasComponents\Module;
 
 use AlingsasComponents\Helper\CacheBust;
+use stdClass;
 
 /**
  * Class alingsashero
@@ -28,6 +29,9 @@ class alingsashero extends \Modularity\Module {
 		$data = array_merge( $data, (array) \Modularity\Helper\FormatObject::camelCase(
 			get_fields( $this->ID )
 		) );
+
+		$data['search'] = __('Search');
+
 		return $data;
 	}
 
