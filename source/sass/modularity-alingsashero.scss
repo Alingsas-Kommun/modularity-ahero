@@ -99,4 +99,25 @@
       opacity: 0.2;
     }
   }
+
+  @media screen and (max-width: 380px) {
+    form.c-form {
+      .c-group {
+        background-color: transparent;
+        border: none;
+        flex-direction: column;
+        gap: .5rem;
+
+        .c-field {
+          background-color: transparent;
+          border: 2px solid var(--c-button-primary-color);
+          border-radius: calc(var(--base, 8px)* 6);
+        }
+
+        .c-button {
+          border-radius: calc(var(--base, 8px)* 6);
+        }
+      }
+    }
+  }
 }
