@@ -4,7 +4,7 @@
  * Plugin Name:       Alingsas Hero
  * Plugin URI:        https://github.com/v7ltz/modularity-alingsashero
  * Description:       An interactive hero component for Modularity
- * Version:           1.0.0
+ * Version:           0.1.4
  * Author:            Consid
  * Author URI:        https://github.com/v7ltz
  * License:           MIT
