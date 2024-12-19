@@ -4,7 +4,7 @@
  * Plugin Name:       Alingsas Hero
  * Plugin URI:        https://github.com/v7ltz/modularity-alingsashero
  * Description:       An interactive hero component for Modularity
- * Version:           0.1.4
+ * Version:           0.1.5
  * Author:            Consid
  * Author URI:        https://github.com/v7ltz
  * License:           MIT
@@ -13,7 +13,7 @@
  * Domain Path:       /languages
  */
 
- // Protect agains direct file access
+// Protect agains direct file access
 if (! defined('WPINC')) {
     die;
 }
