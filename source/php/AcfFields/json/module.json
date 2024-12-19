@@ -163,6 +163,26 @@
                     "parent_repeater": "field_66f27a0c23cf3"
                 }
             ]
+        },
+        {
+            "key": "field_676423ea37683",
+            "label": "Visa s\u00f6k?",
+            "name": "show_search",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [

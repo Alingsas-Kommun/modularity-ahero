@@ -9,26 +9,29 @@ use stdClass;
  * Class alingsashero
  * @package alingsashero\Module
  */
-class alingsashero extends \Modularity\Module {
+class alingsashero extends \Modularity\Module
+{
 	public $slug = 'alingsashero';
 	public $supports = array();
 
-	public function init() {
-		$this->nameSingular = __( "(A) Hero", 'modularity-alingsashero' );
-		$this->namePlural   = __( "(A) Hero", 'modularity-alingsashero' );
-		$this->description  = __( "An interactive hero component for Modularity", 'modularity-alingsashero' );
+	public function init()
+	{
+		$this->nameSingular = __("(A) Hero", 'modularity-alingsashero');
+		$this->namePlural   = __("(A) Hero", 'modularity-alingsashero');
+		$this->description  = __("An interactive hero component for Modularity", 'modularity-alingsashero');
 	}
 
 	/**
 	 * Data array
 	 * @return array $data
 	 */
-	public function data() : array {
+	public function data(): array
+	{
 		$data = array();
 
-		$data = array_merge( $data, (array) \Modularity\Helper\FormatObject::camelCase(
-			get_fields( $this->ID )
-		) );
+		$data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(
+			get_fields($this->ID)
+		));
 
 		$data['search'] = __('Search');
 
@@ -39,7 +42,8 @@ class alingsashero extends \Modularity\Module {
 	 * Blade Template
 	 * @return string
 	 */
-	public function template() : string {
+	public function template(): string
+	{
 		return "alingsashero.blade.php";
 	}
 
@@ -47,30 +51,32 @@ class alingsashero extends \Modularity\Module {
 	 * Style - Register & adding css
 	 * @return void
 	 */
-	public function style() {
+	public function style()
+	{
 		wp_register_style(
 			'modularity-alingsashero',
-			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name( 'css/modularity-alingsashero.css' ),
+			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name('css/modularity-alingsashero.css'),
 			null,
 			'1.0.0'
 		);
 
-		wp_enqueue_style( 'modularity-alingsashero' );
+		wp_enqueue_style('modularity-alingsashero');
 	}
 
 	/**
 	 * Script - Register & adding scripts
 	 * @return void
 	 */
-	public function script() {
+	public function script()
+	{
 		wp_register_script(
 			'modularity-alingsashero',
-			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name( 'js/modularity-alingsashero.js' ),
+			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name('js/modularity-alingsashero.js'),
 			null,
 			'1.0.0'
 		);
 
-		wp_enqueue_script( 'modularity-alingsashero' );
+		wp_enqueue_script('modularity-alingsashero');
 	}
 
 	/**

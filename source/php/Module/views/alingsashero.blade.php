@@ -7,42 +7,44 @@
             ])
                 {{ $aHeroText ?? '' }}
             @endtypography
-            @form([
-            'method' => 'GET',
-            'action' => home_url('/'),
-            'classList' => ['u-width--100', 'a-hero__search-form']
-            ])
-            @group(['direction' => 'horizontal', 'classList' => ['u-width--100']])
-                @field([
-                    'type' => 'text',
-                    'id' => 'a-hero__search-form--field',
-                    'name' => 's',
-                    'required' => false,
-                    'radius' => 'sm',
-                    'label' => $aHeroSearchPlaceholder,
-                    'hideLabel' => true,
-                    'icon' => ['icon' => ''],
-                    'classList' => ['u-flex-grow--1', 'u-box-shadow--1']
+            @if (isset($showSearch) && $showSearch)
+                @form([
+                'method' => 'GET',
+                'action' => home_url('/'),
+                'classList' => ['u-width--100', 'a-hero__search-form']
                 ])
-                @endfield
+                @group(['direction' => 'horizontal', 'classList' => ['u-width--100']])
+                    @field([
+                        'type' => 'text',
+                        'id' => 'a-hero__search-form--field',
+                        'name' => 's',
+                        'required' => false,
+                        'radius' => 'sm',
+                        'label' => $aHeroSearchPlaceholder,
+                        'hideLabel' => true,
+                        'icon' => ['icon' => ''],
+                        'classList' => ['u-flex-grow--1', 'u-box-shadow--1']
+                    ])
+                    @endfield
 
-                @button([
-                    'classList' => [
-                        'a-hero__search-form__submit-icon',
-                        'c-button--no-disabled-color',
-                    ],
-                    'style' => 'primary',
-                    'type' => 'submit',
-                    'icon' => 'search',
-                    'reversePositions' => true,
-                    'text' => $search,
-                    'attributeList' => [
-                        'aria-label' => $search,
-                    ],
-                ])
-                @endbutton
-            @endgroup
+                    @button([
+                        'classList' => [
+                            'a-hero__search-form__submit-icon',
+                            'c-button--no-disabled-color',
+                        ],
+                        'style' => 'primary',
+                        'type' => 'submit',
+                        'icon' => 'search',
+                        'reversePositions' => true,
+                        'text' => $search,
+                        'attributeList' => [
+                            'aria-label' => $search,
+                        ],
+                    ])
+                    @endbutton
+                @endgroup
             @endform
+            @endif
             @if (isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks))
                 <div class="a-hero__col__buttons">
                     @foreach ($quickLinks as $quickLink)
