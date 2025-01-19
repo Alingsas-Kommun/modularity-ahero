@@ -11,7 +11,22 @@
 
   h1 {
     color: var(--theme-hero-general-color, #236151);
-    font-weight: 500;
+
+    &.c-typography.c-typography__variant--h1 {
+      font-size: 6.5vw;
+
+      @media screen and (min-width: 768px) {
+        font-size: 4.5vw;
+      }
+
+      @media screen and (min-width: 1116px) {
+        font-size: 3.5vw;
+      }
+
+      @media screen and (min-width: 1920px) {
+        font-size: 3.5rem;
+      }
+    }
   }
 
   &__col {
