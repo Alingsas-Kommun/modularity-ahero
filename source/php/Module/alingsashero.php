@@ -69,14 +69,15 @@ class alingsashero extends \Modularity\Module
 	 */
 	public function script()
 	{
-		wp_register_script(
+		// Uncomment to use JS
+		/* wp_register_script(
 			'modularity-alingsashero',
 			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name('js/modularity-alingsashero.js'),
 			null,
 			'1.0.0'
 		);
 
-		wp_enqueue_script('modularity-alingsashero');
+		wp_enqueue_script('modularity-alingsashero'); */
 	}
 
 	/**
