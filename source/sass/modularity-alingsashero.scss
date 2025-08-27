@@ -135,9 +135,9 @@
     }
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 420px) {
     form.c-form {
-      .c-group {
+      div.c-group {
         background-color: transparent;
         border: none;
         flex-direction: column;
