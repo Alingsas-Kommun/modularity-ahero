@@ -1,18 +1,18 @@
 {
   "name": "modularity-alingsashero",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "An interactive hero component for Modularity",
   "main": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/v7ltz/modularity-alingsashero"
+    "url": "https://github.com/Alingsas-Kommun/modularity-ahero"
   },
-  "author": "Consid",
+  "author": "Consid Borås AB, Alingsås kommun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/v7ltz/modularity-alingsashero/issues"
+    "url": "https://github.com/Alingsas-Kommun/modularity-ahero/issues"
   },
-  "homepage": "https://github.com/v7ltz/modularity-alingsashero",
+  "homepage": "https://github.com/Alingsas-Kommun/modularity-ahero",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "cross-env NODE_ENV=development webpack --watch",

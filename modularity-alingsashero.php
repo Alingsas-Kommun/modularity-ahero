@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:       Alingsas Hero
- * Plugin URI:        https://github.com/v7ltz/modularity-alingsashero
+ * Plugin URI:        https://github.com/Alingsas-Kommun/modularity-ahero
  * Description:       An interactive hero component for Modularity
- * Version:           0.1.7
- * Author:            Consid
- * Author URI:        https://github.com/v7ltz
+ * Version:           1.0.0
+ * Author:            Consid Borås AB, Alingsås kommun
+ * Author URI:        https://github.com/Alingsas-Kommun
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       mod-alingsashero

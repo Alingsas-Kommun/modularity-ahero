@@ -5,8 +5,8 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Alingsas Kommun",
-      "email": "email@provider.net"
+      "name": "Consid Borås AB, Alingsås kommun",
+      "email": "alingsaskommun@consid.se"
     }
   ],
   "minimum-stability": "stable",
@@ -16,5 +16,6 @@
       "type": "vcs",
       "url": "https://github.com/Alingsas-Kommun/modularity-ahero"
     }
-  ]
+  ],
+  "version": "1.0.0"
 }
