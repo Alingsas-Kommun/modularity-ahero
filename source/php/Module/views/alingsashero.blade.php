@@ -1,4 +1,4 @@
-    <div lang="{{ $lang }}" class="a-hero">
+    <div class="a-hero">
         <div class="a-hero__col">
             @typography([
                 'element' => 'h1',
