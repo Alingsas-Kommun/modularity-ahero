@@ -1,15 +1,13 @@
 <?php 
 
-
-if (function_exists('acf_add_local_field_group')) {
-
-    acf_add_local_field_group(array(
+if (function_exists('acf_add_local_field_group')) {
+    acf_add_local_field_group(array(
     'key' => 'group_66f17c34c585e',
-    'title' => __('Alingsas Hero', 'modularity-alingsashero'),
+    'title' => __('Hero', 'modularity-alingsashero'),
     'fields' => array(
         0 => array(
             'key' => 'field_66f17c3e932aa',
-            'label' => __('Herotitel', 'modularity-alingsashero'),
+            'label' => __('Title', 'modularity-alingsashero'),
             'name' => 'a_hero_text',
             'aria-label' => '',
             'type' => 'text',
@@ -23,13 +21,14 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             'default_value' => '',
             'maxlength' => '',
+            'allow_in_bindings' => 1,
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
         ),
         1 => array(
             'key' => 'field_66f17f106d799',
-            'label' => __('Bild', 'modularity-alingsashero'),
+            'label' => __('Image', 'modularity-alingsashero'),
             'name' => 'a_hero_image',
             'aria-label' => '',
             'type' => 'image',
@@ -43,6 +42,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             'uploader' => '',
             'return_format' => 'array',
+            'library' => 'all',
             'acfe_thumbnail' => 0,
             'min_width' => '',
             'min_height' => '',
@@ -51,12 +51,12 @@ if (function_exists('acf_add_local_field_group')) {
             'max_height' => '',
             'max_size' => '',
             'mime_types' => '',
+            'allow_in_bindings' => 1,
             'preview_size' => 'medium',
-            'library' => 'all',
         ),
         2 => array(
             'key' => 'field_66f17c58932ab',
-            'label' => __('Sök platshållartext', 'modularity-alingsashero'),
+            'label' => __('Search placeholder', 'modularity-alingsashero'),
             'name' => 'a_hero_search_placeholder',
             'aria-label' => '',
             'type' => 'text',
@@ -70,13 +70,14 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             'default_value' => '',
             'maxlength' => '',
+            'allow_in_bindings' => 1,
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
         ),
         3 => array(
             'key' => 'field_66f27a0c23cf3',
-            'label' => __('Snabblänkar', 'modularity-alingsashero'),
+            'label' => __('Quick links', 'modularity-alingsashero'),
             'name' => 'quick_links',
             'aria-label' => '',
             'type' => 'repeater',
@@ -94,12 +95,12 @@ if (function_exists('acf_add_local_field_group')) {
             'min' => 0,
             'max' => 0,
             'collapsed' => '',
-            'button_label' => __('Lägg till knapp', 'modularity-alingsashero'),
+            'button_label' => __('Add button', 'modularity-alingsashero'),
             'rows_per_page' => 20,
             'sub_fields' => array(
                 0 => array(
                     'key' => 'field_66f27a1c23cf4',
-                    'label' => __('Knapp', 'modularity-alingsashero'),
+                    'label' => __('Button', 'modularity-alingsashero'),
                     'name' => 'link',
                     'aria-label' => '',
                     'type' => 'link',
@@ -112,15 +113,16 @@ if (function_exists('acf_add_local_field_group')) {
                         'id' => '',
                     ),
                     'return_format' => 'array',
+                    'allow_in_bindings' => 1,
                     'parent_repeater' => 'field_66f27a0c23cf3',
                 ),
                 1 => array(
                     'key' => 'field_66f283611fe19',
-                    'label' => __('Knappfärg', 'modularity-alingsashero'),
+                    'label' => __('Button color', 'modularity-alingsashero'),
                     'name' => 'color',
                     'aria-label' => '',
                     'type' => 'radio',
-                    'instructions' => __('Uppmärksam och Kantline ihop stöds inte på grund utav kontrasten', 'modularity-alingsashero'),
+                    'instructions' => __('Attention and Outlined cannot be used together due to contrast issues', 'modularity-alingsashero'),
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -129,21 +131,22 @@ if (function_exists('acf_add_local_field_group')) {
                         'id' => '',
                     ),
                     'choices' => array(
-                        'attention' => __('Uppmärksam', 'modularity-alingsashero'),
-                        'primary' => __('Primär', 'modularity-alingsashero'),
-                        'secondary' => __('Sekundär', 'modularity-alingsashero'),
+                        'attention' => __('Attention', 'modularity-alingsashero'),
+                        'primary' => __('Primary', 'modularity-alingsashero'),
+                        'secondary' => __('Secondary', 'modularity-alingsashero'),
                     ),
-                    'default_value' => __('primary', 'modularity-alingsashero'),
+                    'default_value' => 'primary',
                     'return_format' => 'value',
                     'allow_null' => 0,
                     'other_choice' => 0,
+                    'allow_in_bindings' => 1,
                     'layout' => 'horizontal',
                     'save_other_choice' => 0,
                     'parent_repeater' => 'field_66f27a0c23cf3',
                 ),
                 2 => array(
                     'key' => 'field_66f2845a1fe1a',
-                    'label' => __('Fylld / Kantline', 'modularity-alingsashero'),
+                    'label' => __('Filled / Outlined', 'modularity-alingsashero'),
                     'name' => 'style',
                     'aria-label' => '',
                     'type' => 'radio',
@@ -156,13 +159,14 @@ if (function_exists('acf_add_local_field_group')) {
                         'id' => '',
                     ),
                     'choices' => array(
-                        'filled' => __('Fylld', 'modularity-alingsashero'),
-                        'outlined' => __('Kantlinje', 'modularity-alingsashero'),
+                        'filled' => __('Filled', 'modularity-alingsashero'),
+                        'outlined' => __('Outlined', 'modularity-alingsashero'),
                     ),
-                    'default_value' => __('filled', 'modularity-alingsashero'),
+                    'default_value' => 'filled',
                     'return_format' => 'value',
                     'allow_null' => 0,
                     'other_choice' => 0,
+                    'allow_in_bindings' => 1,
                     'layout' => 'horizontal',
                     'save_other_choice' => 0,
                     'parent_repeater' => 'field_66f27a0c23cf3',
@@ -171,7 +175,7 @@ if (function_exists('acf_add_local_field_group')) {
         ),
         4 => array(
             'key' => 'field_676423ea37683',
-            'label' => __('Visa sök?', 'modularity-alingsashero'),
+            'label' => __('Show search?', 'modularity-alingsashero'),
             'name' => 'show_search',
             'aria-label' => '',
             'type' => 'true_false',
@@ -185,6 +189,7 @@ if (function_exists('acf_add_local_field_group')) {
             ),
             'message' => '',
             'default_value' => 1,
+            'allow_in_bindings' => 1,
             'ui' => 0,
             'ui_on_text' => '',
             'ui_off_text' => '',
@@ -215,7 +220,7 @@ if (function_exists('acf_add_local_field_group')) {
     'active' => true,
     'description' => '',
     'show_in_rest' => 0,
-    'acfe_display_title' => '',
+    'display_title' => '',
     'acfe_autosync' => array(
         0 => 'json',
     ),
@@ -223,5 +228,4 @@ if (function_exists('acf_add_local_field_group')) {
     'acfe_meta' => '',
     'acfe_note' => '',
 ));
-
-}
+}

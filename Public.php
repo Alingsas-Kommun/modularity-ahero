@@ -6,13 +6,13 @@ if (!function_exists('modularity_alingsashero_render_blade_view')) {
     function modularity_alingsashero_render_blade_view($view, $data = [], $compress = true)
     {
         $init = new ComponentLibraryInit([
-            ALINGAS_COMPONENTS_MODULE_VIEW_PATH
+            ALINGAS_HERO_MODULE_VIEW_PATH
         ]);
 
         $bladeEngine = $init->getEngine();
 
         try {
-            $markup = $bladeEngine->make(
+            $markup = $bladeEngine->makeView(
                 $view,
                 array_merge(
                     $data,

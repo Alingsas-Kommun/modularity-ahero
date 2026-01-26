@@ -1,6 +1,6 @@
 <?php
 
-namespace AlingsasComponents;
+namespace AlingsasHero;
 
 class App
 {
@@ -25,7 +25,7 @@ class App
     {
         if (function_exists('modularity_register_module')) {
             modularity_register_module(
-                ALINGAS_COMPONENTS_MODULE_PATH,
+                ALINGAS_HERO_MODULE_PATH,
                 'alingsashero'
             );
         }
@@ -40,10 +40,10 @@ class App
     {
         // If child theme is active, insert plugin view path after child views path.
         if (is_child_theme()) {
-            array_splice($array, 2, 0, array(ALINGAS_COMPONENTS_VIEW_PATH));
+            array_splice($array, 2, 0, array(ALINGAS_HERO_VIEW_PATH));
         } else {
             // Add view path first in the list if child theme is not active.
-            array_unshift($array, ALINGAS_COMPONENTS_VIEW_PATH);
+            array_unshift($array, ALINGAS_HERO_VIEW_PATH);
         }
 
         return $array;

@@ -1,6 +1,6 @@
 <?php
 
-namespace AlingsasComponents\Admin;
+namespace AlingsasHero\Admin;
 
 class Settings
 {
