@@ -1,6 +1,13 @@
+.modularity-mod-alingsashero {
+  --hero-background: var(--theme-hero-general-background, #cadfde);
+  --hero-color: var(--theme-hero-general-color, #236151);
+
+  background-color: var(--hero-background);
+}
+
 .a-hero {
-  background-color: var(--theme-hero-general-background, #cadfde);
-  color: var(--theme-hero-general-color, #236151);
+  background-color: var(--hero-background);
+  color: var(--hero-color);
   min-width: auto;
   max-width: 1920px;
   margin-inline: auto;
@@ -10,7 +17,7 @@
   container-type: inline-size;
 
   h1 {
-    color: var(--theme-hero-general-color, #236151);
+    color: var(--hero-color);
 
     &.c-typography.c-typography__variant--h1 {
       font-size: 6.5vw;

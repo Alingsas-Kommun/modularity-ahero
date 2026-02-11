@@ -1,9 +1,8 @@
 <?php
 
-namespace AlingsasComponents\Module;
+namespace AlingsasHero\Module;
 
-use AlingsasComponents\Helper\CacheBust;
-use stdClass;
+use AlingsasHero\Helper\CacheBust;
 
 /**
  * Class alingsashero
@@ -33,7 +32,7 @@ class alingsashero extends \Modularity\Module
 			get_fields($this->ID)
 		));
 
-		$data['search'] = __('Search');
+		$data['search'] = __('Search', 'modularity-alingsashero');
 
 		$count = isset($data['numberOfRecommendations']) ? max(0, min(7, (int) $data['numberOfRecommendations'])) : 0;
 		$data['numberOfRecommendations'] = $count;
@@ -65,7 +64,7 @@ class alingsashero extends \Modularity\Module
 	{
 		wp_register_style(
 			'modularity-alingsashero',
-			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name('css/modularity-alingsashero.css'),
+			ALINGAS_HERO_URL . '/dist/' . CacheBust::name('css/modularity-alingsashero.css'),
 			null,
 			'1.0.0'
 		);
@@ -82,7 +81,7 @@ class alingsashero extends \Modularity\Module
 		// Uncomment to use JS
 		/* wp_register_script(
 			'modularity-alingsashero',
-			ALINGAS_COMPONENTS_URL . '/dist/' . CacheBust::name('js/modularity-alingsashero.js'),
+			ALINGAS_HERO_URL . '/dist/' . CacheBust::name('js/modularity-alingsashero.js'),
 			null,
 			'1.0.0'
 		);

@@ -1,0 +1,119 @@
+# Copyright (C) 2026 Consid Borås AB, Alingsås kommun
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Alingsas Hero 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/modularity-alingsashero\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-26T09:18:07+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: modularity-alingsashero\n"
+
+#. Plugin Name of the plugin
+#: modularity-alingsashero.php
+#: source/php/Admin/Settings.php:19
+msgid "Alingsas Hero"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: modularity-alingsashero.php
+msgid "https://github.com/Alingsas-Kommun/modularity-ahero"
+msgstr ""
+
+#. Description of the plugin
+#: modularity-alingsashero.php
+#: source/php/Module/alingsashero.php:20
+msgid "An interactive hero component for Modularity"
+msgstr ""
+
+#. Author of the plugin
+#: modularity-alingsashero.php
+msgid "Consid Borås AB, Alingsås kommun"
+msgstr ""
+
+#. Author URI of the plugin
+#: modularity-alingsashero.php
+msgid "https://github.com/Alingsas-Kommun"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:8
+msgid "Hero"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:12
+msgid "Title"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:33
+msgid "Image"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:61
+msgid "Search placeholder"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:82
+msgid "Quick links"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:100
+msgid "Add button"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:105
+msgid "Button"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:123
+msgid "Button color"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:127
+msgid "Attention and Outlined cannot be used together due to contrast issues"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:136
+msgid "Attention"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:137
+msgid "Primary"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:138
+msgid "Secondary"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:151
+msgid "Filled / Outlined"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:164
+msgid "Filled"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:165
+msgid "Outlined"
+msgstr ""
+
+#: source/php/AcfFields/php/module.php:180
+msgid "Show search?"
+msgstr ""
+
+#: source/php/Admin/Settings.php:20
+msgid "Alingsas Hero Settings"
+msgstr ""
+
+#: source/php/Module/alingsashero.php:18
+#: source/php/Module/alingsashero.php:19
+msgid "(A) Hero"
+msgstr ""
+
+#: source/php/Module/alingsashero.php:35
+msgid "Search"
+msgstr ""
