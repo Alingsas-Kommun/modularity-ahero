@@ -47,6 +47,42 @@
             @endif
             @if ((isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks)) || (isset($rekAiEnabled) && $rekAiEnabled))
                 <div class="a-hero__col__buttons">
+                    @if (isset($rekAiEnabled) && $rekAiEnabled && !empty($rekAiContainerId) && !empty($numberOfRecommendations))
+                        <div id="{{ $rekAiContainerId }}" class="a-hero__rek-buttons">
+                            @for ($i = 0; $i < $numberOfRecommendations; $i++)
+                                <span
+                                    class="rek-ai-preload-remove c-button c-button--md c-button--primary c-button--filled u-margin--0"
+                                    aria-hidden="true">{{ __('Laddar…', 'modularity-alingsashero') }}</span>
+                            @endfor
+                        </div>
+                        <script>
+                            window.addEventListener("rekai.load", function() {
+                                function renderHtml(data) {
+                                    var target = document.getElementById("{{ $rekAiContainerId }}");
+                                    if (!target) return;
+                                    var preloaderItems = target.querySelectorAll(".rek-ai-preload-remove");
+                                    if (preloaderItems) preloaderItems.forEach(function(item) {
+                                        item.remove();
+                                    });
+                                    (data.predictions || []).forEach(function(p) {
+                                        var a = document.createElement("a");
+                                        a.href = p.url || "#";
+                                        a.textContent = p.title || "";
+                                        a.className =
+                                            "c-button u-margin--0 c-button__filled c-button__filled--primary c-button--md c-button--pill";
+                                        target.appendChild(a);
+                                    });
+                                    window.__rekai.checkAndAddEventsToDOM("#{{ $rekAiContainerId }}");
+                                }
+                                window.__rekai.predict({
+                                    overwrite: {
+                                        addcontent: true,
+                                        nrofhits: {{ $numberOfRecommendations }}
+                                    }
+                                }, renderHtml);
+                            });
+                        </script>
+                    @endif
                     @if (isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks))
                         @foreach ($quickLinks as $quickLink)
                             @if (isset($quickLink['link']))
@@ -63,34 +99,6 @@
                                 @endbutton
                             @endif
                         @endforeach
-                    @endif
-                    @if (isset($rekAiEnabled) && $rekAiEnabled && !empty($rekAiContainerId) && !empty($numberOfRecommendations))
-                        <div id="{{ $rekAiContainerId }}" class="a-hero__rek-buttons">
-                            @for ($i = 0; $i < $numberOfRecommendations; $i++)
-                                <span class="rek-ai-preload-remove c-button c-button--md c-button--primary c-button--filled u-margin--0" aria-hidden="true">{{ __('Laddar…', 'modularity-alingsashero') }}</span>
-                            @endfor
-                        </div>
-                        <script>
-                        window.addEventListener("rekai.load", function() {
-                            function renderHtml(data) {
-                                var target = document.getElementById("{{ $rekAiContainerId }}");
-                                if (!target) return;
-                                var preloaderItems = target.querySelectorAll(".rek-ai-preload-remove");
-                                if (preloaderItems) preloaderItems.forEach(function(item) { item.remove(); });
-                                (data.predictions || []).forEach(function(p) {
-                                    var a = document.createElement("a");
-                                    a.href = p.url || "#";
-                                    a.textContent = p.title || "";
-                                    a.className = "c-button c-button--md c-button--primary c-button--filled u-margin--0";
-                                    target.appendChild(a);
-                                });
-                                window.__rekai.checkAndAddEventsToDOM("#{{ $rekAiContainerId }}");
-                            }
-                            window.__rekai.predict({
-                                overwrite: { addcontent: true, nrofhits: {{ $numberOfRecommendations }} }
-                            }, renderHtml);
-                        });
-                        </script>
                     @endif
                 </div>
             @endif
