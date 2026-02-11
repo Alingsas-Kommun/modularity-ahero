@@ -183,6 +183,28 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_67c8a1b2rek01",
+            "label": "Antal Rek AI-rekommendationer",
+            "name": "number_of_recommendations",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Antal rekommendationsknappar från Rek AI (0 = av).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": 0,
+            "max": 7,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [

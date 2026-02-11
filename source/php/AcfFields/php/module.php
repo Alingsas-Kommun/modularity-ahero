@@ -189,6 +189,28 @@ if (function_exists('acf_add_local_field_group')) {
             'ui_on_text' => '',
             'ui_off_text' => '',
         ),
+        5 => array(
+            'key' => 'field_67c8a1b2rek01',
+            'label' => __('Antal Rek AI-rekommendationer', 'modularity-alingsashero'),
+            'name' => 'number_of_recommendations',
+            'aria-label' => '',
+            'type' => 'number',
+            'instructions' => __('Antal rekommendationsknappar från Rek AI (0 = av).', 'modularity-alingsashero'),
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 0,
+            'min' => 0,
+            'max' => 7,
+            'step' => 1,
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+        ),
     ),
     'location' => array(
         0 => array(

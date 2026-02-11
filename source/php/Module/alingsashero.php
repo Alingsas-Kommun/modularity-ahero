@@ -35,6 +35,16 @@ class alingsashero extends \Modularity\Module
 
 		$data['search'] = __('Search');
 
+		$count = isset($data['numberOfRecommendations']) ? max(0, min(7, (int) $data['numberOfRecommendations'])) : 0;
+		$data['numberOfRecommendations'] = $count;
+		$data['rekAiEnabled'] = false;
+		$data['rekAiContainerId'] = '';
+
+		if ($count > 0 && (bool) get_field('rekai_enable', 'options') && get_field('rekai_script_url', 'options')) {
+			$data['rekAiEnabled'] = true;
+			$data['rekAiContainerId'] = 'hero-rek-' . md5(uniqid((string) mt_rand(), true));
+		}
+
 		return $data;
 	}
 
