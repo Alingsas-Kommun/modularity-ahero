@@ -197,7 +197,7 @@
             "name": "number_of_recommendations",
             "aria-label": "",
             "type": "number",
-            "instructions": "Antal rekommendationsknappar från Rek AI (0 = av).",
+            "instructions": "Antal rekommendationsknappar fr\u00e5n Rek AI (0 = av).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -212,6 +212,33 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67c8a1b2rek02",
+            "label": "Exkludera sidor",
+            "name": "excludetree",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Sidor som ska exkluderas fr\u00e5n Rek AI-rekommendationer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": [],
+            "save_custom": 0,
+            "save_post_type": "",
+            "save_post_status": ""
         }
     ],
     "location": [

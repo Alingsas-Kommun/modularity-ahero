@@ -74,12 +74,16 @@
                                     });
                                     window.__rekai.checkAndAddEventsToDOM("#{{ $rekAiContainerId }}");
                                 }
-                                window.__rekai.predict({
+                                var rekaiOptions = {
                                     overwrite: {
                                         addcontent: true,
                                         nrofhits: {{ $numberOfRecommendations }}
                                     }
-                                }, renderHtml);
+                                };
+                                @if (!empty($rekAiExcludetree))
+                                    rekaiOptions.overwrite.excludetree = "{{ $rekAiExcludetree }}";
+                                @endif
+                                window.__rekai.predict(rekaiOptions, renderHtml);
                             });
                         </script>
                     @endif

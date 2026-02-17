@@ -44,6 +44,10 @@ class alingsashero extends \Modularity\Module
 			$data['rekAiContainerId'] = 'hero-rek-' . md5(uniqid((string) mt_rand(), true));
 		}
 
+		$data['rekAiExcludetree'] = !empty($data['excludetree'])
+			? $this->convertPostsToString($data['excludetree'])
+			: '';
+
 		return $data;
 	}
 
@@ -87,6 +91,17 @@ class alingsashero extends \Modularity\Module
 		);
 
 		wp_enqueue_script('modularity-alingsashero'); */
+	}
+
+	/**
+	 * Convert an array of post objects to a comma-separated string of slugs.
+	 *
+	 * @param array $posts Array of WP_Post objects
+	 * @return string Comma-separated post slugs
+	 */
+	public function convertPostsToString(array $posts): string
+	{
+		return implode(',', array_map(fn($post) => $post->post_name, $posts));
 	}
 
 	/**
