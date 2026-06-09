@@ -44,9 +44,10 @@ class alingsashero extends \Modularity\Module
 			$data['rekAiContainerId'] = 'hero-rek-' . md5(uniqid((string) mt_rand(), true));
 		}
 
-		$data['rekAiExcludetree'] = !empty($data['excludetree'])
-			? $this->convertPostsToString($data['excludetree'])
-			: '';
+		$excludeTree = $data['excludetree'] ?? [];
+		$excludeTreeCustomLinks = $data['excludetreeCustomLinks'] ?? '';
+
+		$data['rekAiExcludetree'] = $this->createExcludeTree($excludeTree, $excludeTreeCustomLinks);
 
 		return $data;
 	}
@@ -93,15 +94,41 @@ class alingsashero extends \Modularity\Module
 		wp_enqueue_script('modularity-alingsashero'); */
 	}
 
+	public function createExcludeTree(array $excludeTree, string $excludeTreeCustomLinks): string
+	{
+		$tree = [];
+
+		foreach ($excludeTree as $postId) {
+			$permalink = str_replace(home_url(), '', get_permalink($postId));
+			if ($permalink) {
+				$tree[] = $permalink;
+			}
+		}
+
+		$excludeTreeCustomLinks = str_replace(["\r\n", "\r"], "\n", $excludeTreeCustomLinks);
+		$excludeTreeCustomLinks = array_map('trim', explode("\n", $excludeTreeCustomLinks));
+		foreach ($excludeTreeCustomLinks as $link) {
+			if (!empty($link)) {
+				$permalink = str_replace(home_url(), '', esc_url($link));
+				if ($permalink) {
+					$tree[] = $permalink;
+				}
+			}
+		}
+
+		return implode(',', $tree);
+	}
+
 	/**
-	 * Convert an array of post objects to a comma-separated string of slugs.
+	 * Convert an array of post objects to a comma-separated string of permalinks.
+	 * Remove domain from the permalinks to avoid CORS issues with RekAI when using absolute URLs.
 	 *
 	 * @param array $posts Array of WP_Post objects
-	 * @return string Comma-separated post slugs
+	 * @return string Comma-separated post permalinks
 	 */
 	public function convertPostsToString(array $posts): string
 	{
-		return implode(',', array_map(fn($post) => $post->post_name, $posts));
+		return implode(',', array_map(fn($post) => str_replace(home_url(), '', get_permalink($post)), $posts));
 	}
 
 	/**

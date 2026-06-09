@@ -239,6 +239,28 @@
             "save_custom": 0,
             "save_post_type": "",
             "save_post_status": ""
+        },
+        {
+            "key": "field_6a27eaf42e02f",
+            "label": "Exkludera specifika l\u00e4nkar",
+            "name": "excludetree_custom_links",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "En l\u00e4nk per rad, exempelvis<br>\r\n<br>\r\n\/arbete\/lediga-jobb<br>\r\n\/trafik-och-gator",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "acfe_textarea_code": 0,
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
         }
     ],
     "location": [
