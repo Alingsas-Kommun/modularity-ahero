@@ -48,7 +48,7 @@
             @if ((isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks)) || (isset($rekAiEnabled) && $rekAiEnabled))
                 <div class="a-hero__col__buttons">
                     @if (isset($rekAiEnabled) && $rekAiEnabled && !empty($rekAiContainerId) && !empty($numberOfRecommendations))
-                        <div id="{{ $rekAiContainerId }}" class="a-hero__rek-buttons">
+                        <div id="{{ $rekAiContainerId }}" class="a-hero__rek-buttons" hidden>
                             @for ($i = 0; $i < $numberOfRecommendations; $i++)
                                 <span
                                     class="rek-ai-preload-remove c-button c-button--md c-button--primary c-button--filled u-margin--0"
@@ -56,6 +56,29 @@
                             @endfor
                         </div>
                         <script>
+                            (function() {
+                                var containerId = "{{ $rekAiContainerId }}";
+
+                                function hasAnalyticsConsent(detail) {
+                                    var categories = (detail && detail.cookie && detail.cookie.categories) ||
+                                        (detail && detail.changedCategories) || [];
+                                    return categories.indexOf("analytics") !== -1;
+                                }
+
+                                function setRekButtonsVisible(visible) {
+                                    var target = document.getElementById(containerId);
+                                    if (!target) return;
+                                    target.hidden = !visible;
+                                }
+
+                                function handleConsent(event) {
+                                    setRekButtonsVisible(hasAnalyticsConsent(event.detail));
+                                }
+
+                                window.addEventListener("pressidium-cookie-consent-accepted", handleConsent);
+                                window.addEventListener("pressidium-cookie-consent-changed", handleConsent);
+                            })();
+
                             window.addEventListener("rekai.load", function() {
                                 function renderHtml(data) {
                                     var target = document.getElementById("{{ $rekAiContainerId }}");

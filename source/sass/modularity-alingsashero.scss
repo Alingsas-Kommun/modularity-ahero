@@ -40,6 +40,10 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+
+    &[hidden] {
+      display: none;
+    }
   }
 
   &__col {
