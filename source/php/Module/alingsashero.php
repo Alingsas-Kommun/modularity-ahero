@@ -44,8 +44,8 @@ class alingsashero extends \Modularity\Module
 			$data['rekAiContainerId'] = 'hero-rek-' . md5(uniqid((string) mt_rand(), true));
 		}
 
-		$excludeTree = $data['excludetree'] ?? [];
-		$excludeTreeCustomLinks = $data['excludetreeCustomLinks'] ?? '';
+		$excludeTree = isset($data['excludetree']) && is_array($data['excludetree']) ? $data['excludetree'] : [];
+		$excludeTreeCustomLinks = isset($data['excludetreeCustomLinks']) && is_string($data['excludetreeCustomLinks']) ? $data['excludetreeCustomLinks'] : '';
 
 		$data['rekAiExcludetree'] = $this->createExcludeTree($excludeTree, $excludeTreeCustomLinks);
 
