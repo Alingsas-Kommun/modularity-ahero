@@ -1,6 +1,18 @@
 .modularity-mod-alingsashero {
   --hero-background: var(--theme-hero-general-background, #cadfde);
   --hero-color: var(--theme-hero-general-color, #236151);
+  --hero-button-background: var(--theme-hero-button-background, var(--color--primary, #236151));
+  --hero-button-color: var(--theme-hero-button-color, var(--color--primary-contrast, #fff));
+  --hero-button-border: var(--theme-hero-button-background, var(--color--primary-border, var(--hero-button-background)));
+  --hero-button-attention-background: var(--theme-hero-button-attention-background, var(--color--warning, #fad945));
+  --hero-button-attention-color: var(--theme-hero-button-attention-color, var(--color--warning-contrast, #000));
+
+  // Configure Styleguide v3 components within the hero without overriding
+  // their internal filled and outlined implementations.
+  --c-button--color--primary: var(--hero-button-background);
+  --c-button--color--primary-contrast: var(--hero-button-color);
+  --c-button--color--primary-border: var(--hero-button-border);
+  --c-field--color--primary: var(--hero-button-background);
 
   background-color: var(--hero-background);
 }
@@ -85,14 +97,14 @@
 
   form.c-form {
     .c-group {
-      background-color: var(--theme-hero-button-background, var(--c-button-primary-color));
-      border: 2px solid var(--theme-hero-button-background, var(--c-button-primary-color));
+      background-color: var(--c-button--color--primary);
+      border: calc(var(--c-button--border-width, var(--border-width, .25)) * var(--base, 8px)) solid var(--c-button--color--primary-border);
       border-radius: calc(var(--base, 8px)* 6);
       overflow: hidden;
     }
 
     .c-field {
-      background-color: var(--theme-hero-button-background, var(--c-button-primary-color));
+      background-color: var(--c-button--color--primary);
       border-bottom-left-radius: calc(var(--base, 8px)* 6);
       border-top-left-radius: calc(var(--base, 8px)* 6);
 
@@ -106,54 +118,43 @@
       }
 
       .c-field_focus-styler {
-        outline-color: var(--theme-hero-button-background, var(--c-button-primary-color));
+        outline-color: var(--color--focus, var(--c-field--color--primary));
       }
     }
 
     .c-button {
-      background-color: var(--theme-hero-button-background, var(--c-button-primary-color));
       border-bottom-right-radius: calc(var(--base, 8px)* 6);
       border-top-right-radius: calc(var(--base, 8px)* 6);
-      color: var(--theme-hero-button-color, white);
-      padding: 0 calc(var(--base, 8px)*3) 0 calc(var(--base, 8px)*2);
-    }
-  }
-
-  a.c-button.c-button__filled {
-    background-color: var(--theme-hero-button-background, var(--c-button-primary-color));
-    color: var(--theme-hero-button-color, white);
-  }
-
-  a.c-button.c-button__outlined {
-    border-color: var(--theme-hero-button-background, var(--c-button-primary-color));
-
-    .c-button__label {
-      color: var(--theme-hero-button-background, var(--c-button-primary-color));
+      padding: 0 calc(var(--c-button--space, var(--space, 1)) * var(--base, 8px) * 3) 0 calc(var(--c-button--space, var(--space, 1)) * var(--base, 8px) * 2);
     }
   }
 
   a.c-button.c-button__filled--attention {
-    background-color: var(--theme-hero-button-attention-background, #fad945);
-    color: var(--theme-hero-button-attention-color, #000);
+    background-color: var(--hero-button-attention-background);
     border: none;
     outline: none;
     filter: unset;
+
+    &,
+    .c-button__label {
+      color: var(--hero-button-attention-color);
+    }
   }
 
   a.c-button.c-button__outlined--attention {
-    border: 2px solid var(--theme-hero-button-attention-background, #fad945);
+    border: calc(var(--c-button--border-width, var(--border-width, .25)) * var(--base, 8px)) solid var(--hero-button-attention-background);
     outline: none;
     filter: unset;
 
     .c-button__label {
-      color: var(--theme-hero-button-attention-background, #000);
+      color: var(--hero-button-attention-background);
     }
 
     &:hover::after,
     div.code-toolbar>.toolbar a:hover::after,
     div.code-toolbar>.toolbar button:hover::after,
     div.code-toolbar>.toolbar span:hover::after {
-      background: var(--color-white, #ffffff);
+      background: var(--color--background, #fff);
       opacity: 0.2;
     }
   }
@@ -168,7 +169,7 @@
 
         .c-field {
           background-color: transparent;
-          border: 2px solid var(--theme-hero-button-background, var(--c-button-primary-color));
+          border: calc(var(--c-button--border-width, var(--border-width, .25)) * var(--base, 8px)) solid var(--c-button--color--primary-border);
           border-radius: calc(var(--base, 8px)* 6);
           overflow: hidden;
         }
