@@ -33,6 +33,7 @@
                             'c-button--no-disabled-color',
                         ],
                         'style' => 'primary',
+                        'shape' => 'pill',
                         'type' => 'submit',
                         'icon' => 'search',
                         'reversePositions' => true,
@@ -120,6 +121,7 @@
                                     'size' => 'md',
                                     'color' => $quickLink['color'],
                                     'style' => $quickLink['style'],
+                                    'shape' => 'pill',
                                     'reversePositions' => true,
                                     'classList' => ['u-margin--0'],
                                 ])
