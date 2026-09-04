@@ -94,7 +94,7 @@
                                         a.href = p.url || "#";
                                         a.textContent = p.title || "";
                                         a.className =
-                                            "c-button u-margin--0 c-button__filled c-button__filled--primary c-button--md c-button--pill";
+                                            "c-button c-button--md c-button--primary c-button--filled c-button--pill u-margin--0";
                                         target.appendChild(a);
                                     });
                                     window.__rekai.checkAndAddEventsToDOM("#{{ $rekAiContainerId }}");

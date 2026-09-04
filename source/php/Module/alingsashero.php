@@ -67,9 +67,15 @@ class alingsashero extends \Modularity\Module
 	 */
 	public function style()
 	{
+		$href = CacheBust::distUrl('css/modularity-alingsashero.css');
+
+		if ($href === false) {
+			return;
+		}
+
 		wp_register_style(
 			'modularity-alingsashero',
-			ALINGAS_HERO_URL . '/dist/' . CacheBust::name('css/modularity-alingsashero.css'),
+			$href,
 			null,
 			'1.0.0'
 		);

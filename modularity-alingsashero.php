@@ -29,7 +29,23 @@ add_action('init', function () {
     load_plugin_textdomain('modularity-alingsashero', false, plugin_basename(dirname(__FILE__)) . '/languages');
 });
 
-require_once ALINGAS_HERO_PATH . 'vendor/autoload.php';
+$alingsasHeroAutoload = ALINGAS_HERO_PATH . 'vendor/autoload.php';
+if (is_readable($alingsasHeroAutoload)) {
+    require_once $alingsasHeroAutoload;
+} else {
+    spl_autoload_register(static function (string $class): void {
+        $prefix = 'AlingsasHero\\';
+        if (!str_starts_with($class, $prefix)) {
+            return;
+        }
+
+        $relative = str_replace('\\', '/', substr($class, strlen($prefix)));
+        $file = ALINGAS_HERO_PATH . 'source/php/' . $relative . '.php';
+        if (is_readable($file)) {
+            require_once $file;
+        }
+    });
+}
 
 require_once ALINGAS_HERO_PATH . 'Public.php';
 

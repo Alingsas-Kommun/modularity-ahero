@@ -12,7 +12,9 @@
   --c-button--color--primary: var(--hero-button-background);
   --c-button--color--primary-contrast: var(--hero-button-color);
   --c-button--color--primary-border: var(--hero-button-border);
+  --c-button--border-radius: 6;
   --c-field--color--primary: var(--hero-button-background);
+  --c-field--border-radius: 6;
 
   background-color: var(--hero-background);
 }
@@ -105,8 +107,7 @@
 
     .c-field {
       background-color: var(--c-button--color--primary);
-      border-bottom-left-radius: calc(var(--base, 8px)* 6);
-      border-top-left-radius: calc(var(--base, 8px)* 6);
+      border-radius: calc(var(--c-field--border-radius, 6) * var(--base, 8px)) 0 0 calc(var(--c-field--border-radius, 6) * var(--base, 8px));
 
       &__inner {
         border: 0;
@@ -122,10 +123,19 @@
       }
     }
 
-    .c-button {
-      border-bottom-right-radius: calc(var(--base, 8px)* 6);
-      border-top-right-radius: calc(var(--base, 8px)* 6);
+    .c-button.a-hero__search-form__submit-icon {
+      background-color: var(--c-button--color--primary, var(--color--primary));
+      border: calc(var(--c-button--border-width, .125) * var(--base, 8px)) solid var(--c-button--color--primary-border, var(--color--primary));
+      color: var(--c-button--color--primary-contrast, var(--color--primary-contrast, #fff));
+      border-start-start-radius: 0;
+      border-end-start-radius: 0;
+      border-start-end-radius: calc(var(--c-button--border-radius, 6) * var(--base, 8px));
+      border-end-end-radius: calc(var(--c-button--border-radius, 6) * var(--base, 8px));
       padding: 0 calc(var(--c-button--space, var(--space, 1)) * var(--base, 8px) * 3) 0 calc(var(--c-button--space, var(--space, 1)) * var(--base, 8px) * 2);
+
+      .c-button__label {
+        color: inherit;
+      }
     }
   }
 
@@ -174,8 +184,52 @@
           overflow: hidden;
         }
 
+        .c-button,
+        .c-button.a-hero__search-form__submit-icon {
+          border-radius: calc(var(--c-button--border-radius, 6) * var(--base, 8px));
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 500px) {
+    form.c-form {
+      .c-group {
+        background-color: var(--c-button--color--primary, var(--color--primary));
+        flex-direction: row;
+        gap: 0;
+
+        .c-field {
+          &.c-field--md input {
+            padding: calc(var(--base, 8px)* 1.5);
+
+            &::placeholder {
+              font-size: 14px;
+            }
+          }
+        }
+
         .c-button {
-          border-radius: calc(var(--base, 8px)* 6);
+          padding: 0 calc(var(--base, 8px)*3) 0 calc(var(--base, 8px)*0.5);
+
+          &__label {
+            gap: var(--base, 4px);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__col__buttons {
+      gap: 1rem 0.5rem;
+
+      .c-button {
+        &.c-button--md {
+          font-size: 14px;
+          height: calc(var(--base, 6px)* 6);
+          min-width: calc(var(--base, 6px)* 9);
+          padding: 0 calc(var(--base, 4px)* 4);
         }
       }
     }
