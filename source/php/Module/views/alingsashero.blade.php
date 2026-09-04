@@ -13,7 +13,7 @@
                 'action' => home_url('/'),
                 'classList' => ['u-width--100', 'a-hero__search-form']
                 ])
-                @group(['direction' => 'horizontal', 'classList' => ['u-width--100']])
+                @group(['direction' => 'horizontal', 'classList' => ['u-width--100', 'c-group--skip-child-normalization']])
                     @field([
                         'type' => 'text',
                         'id' => 'a-hero__search-form--field',
@@ -23,7 +23,7 @@
                         'label' => $aHeroSearchPlaceholder,
                         'hideLabel' => true,
                         'icon' => ['icon' => ''],
-                        'classList' => ['u-flex-grow--1', 'u-box-shadow--1']
+                        'classList' => ['u-flex-grow--1']
                     ])
                     @endfield
 
@@ -34,7 +34,6 @@
                         ],
                         'color' => 'primary',
                         'style' => 'filled',
-                        'shape' => 'pill',
                         'type' => 'submit',
                         'icon' => 'search',
                         'reversePositions' => true,
