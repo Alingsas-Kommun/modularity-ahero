@@ -32,7 +32,7 @@ Frontend assets are built with Vite via the shared `vite-config-factory` package
 
 **Module (`source/php/Module/alingsashero.php`)**: `AlingsasHero\Module\alingsashero extends \Modularity\Module`. This is the actual module logic, following Modularity's module contract:
 - `init()` — sets name/description (translated strings)
-- `data()` — pulls ACF fields via `get_fields()`, camelCases them (`\Modularity\Helper\FormatObject::camelCase`), and builds the RekAI recommendation payload (clamps `numberOfRecommendations` to 0–7, generates a unique container id, builds a comma-separated excluded-permalink list via `createExcludeTree()` combining an ACF post-object field and a free-text textarea of links)
+- `data()` — pulls ACF fields via `$this->getFields()` (Modularity's helper: the module post's fields as a widget, the block's data as a block — required for block rendering), camelCases them (`\Modularity\Helper\FormatObject::camelCase`), and builds the RekAI recommendation payload (clamps `numberOfRecommendations` to 0–7, generates a unique container id, builds a comma-separated excluded-permalink list via `createExcludeTree()` combining an ACF post-object field and a free-text textarea of links)
 - `template()` — returns the blade view filename
 - `style()` / `script()` — conditionally enqueue compiled assets from `dist/` using `Helper\CacheBust::name()` to resolve hashed filenames from the Vite manifest (JS enqueue is currently commented out since `modularity-alingsashero.js` is empty)
 

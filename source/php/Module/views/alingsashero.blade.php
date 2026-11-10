@@ -16,7 +16,7 @@
                 @group(['direction' => 'horizontal', 'classList' => ['u-width--100', 'c-group--skip-child-normalization']])
                     @field([
                         'type' => 'text',
-                        'id' => 'a-hero__search-form--field',
+                        'id' => \AlingsasHero\Module\alingsashero::nextSearchFieldId(),
                         'name' => 's',
                         'required' => false,
                         'radius' => 'sm',
@@ -58,7 +58,18 @@
                         </div>
                         <script>
                             (function() {
-                                var containerId = "{{ $rekAiContainerId }}";
+                                // Bind to the container right before this script, not by id: block
+                                // output is fragment-cached per block data, so two identical hero
+                                // blocks can be served with the same container id.
+                                var script = document.currentScript;
+                                var target = script && script.previousElementSibling;
+                                if (!target || !target.classList.contains("a-hero__rek-buttons")) {
+                                    target = document.getElementById("{{ $rekAiContainerId }}");
+                                }
+                                if (!target) return;
+                                if (document.querySelectorAll('[id="' + target.id + '"]').length > 1) {
+                                    target.id = target.id + "-" + Math.random().toString(36).slice(2, 10);
+                                }
 
                                 function hasAnalyticsConsent(detail) {
                                     var categories = (detail && detail.cookie && detail.cookie.categories) ||
@@ -66,49 +77,40 @@
                                     return categories.indexOf("analytics") !== -1;
                                 }
 
-                                function setRekButtonsVisible(visible) {
-                                    var target = document.getElementById(containerId);
-                                    if (!target) return;
-                                    target.hidden = !visible;
-                                }
-
                                 function handleConsent(event) {
-                                    setRekButtonsVisible(hasAnalyticsConsent(event.detail));
+                                    target.hidden = !hasAnalyticsConsent(event.detail);
                                 }
 
                                 window.addEventListener("pressidium-cookie-consent-accepted", handleConsent);
                                 window.addEventListener("pressidium-cookie-consent-changed", handleConsent);
-                            })();
 
-                            window.addEventListener("rekai.load", function() {
-                                function renderHtml(data) {
-                                    var target = document.getElementById("{{ $rekAiContainerId }}");
-                                    if (!target) return;
-                                    var preloaderItems = target.querySelectorAll(".rek-ai-preload-remove");
-                                    if (preloaderItems) preloaderItems.forEach(function(item) {
-                                        item.remove();
-                                    });
-                                    (data.predictions || []).forEach(function(p) {
-                                        var a = document.createElement("a");
-                                        a.href = p.url || "#";
-                                        a.textContent = p.title || "";
-                                        a.className =
-                                            "c-button c-button--md c-button--primary c-button--filled c-button--pill u-margin--0";
-                                        target.appendChild(a);
-                                    });
-                                    window.__rekai.checkAndAddEventsToDOM("#{{ $rekAiContainerId }}");
-                                }
-                                var rekaiOptions = {
-                                    overwrite: {
-                                        addcontent: true,
-                                        nrofhits: {{ $numberOfRecommendations }}
+                                window.addEventListener("rekai.load", function() {
+                                    function renderHtml(data) {
+                                        target.querySelectorAll(".rek-ai-preload-remove").forEach(function(item) {
+                                            item.remove();
+                                        });
+                                        (data.predictions || []).forEach(function(p) {
+                                            var a = document.createElement("a");
+                                            a.href = p.url || "#";
+                                            a.textContent = p.title || "";
+                                            a.className =
+                                                "c-button c-button--md c-button--primary c-button--filled c-button--pill u-margin--0";
+                                            target.appendChild(a);
+                                        });
+                                        window.__rekai.checkAndAddEventsToDOM("#" + target.id);
                                     }
-                                };
-                                @if (!empty($rekAiExcludetree))
-                                    rekaiOptions.overwrite.excludetree = "{{ $rekAiExcludetree }}";
-                                @endif
-                                window.__rekai.predict(rekaiOptions, renderHtml);
-                            });
+                                    var rekaiOptions = {
+                                        overwrite: {
+                                            addcontent: true,
+                                            nrofhits: {{ (int) $numberOfRecommendations }}
+                                        }
+                                    };
+                                    @if (!empty($rekAiExcludetree))
+                                        rekaiOptions.overwrite.excludetree = "{{ $rekAiExcludetree }}";
+                                    @endif
+                                    window.__rekai.predict(rekaiOptions, renderHtml);
+                                });
+                            })();
                         </script>
                     @endif
                     @if (isset($quickLinks) && is_array($quickLinks) && !empty($quickLinks))

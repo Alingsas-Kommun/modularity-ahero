@@ -13,6 +13,32 @@ class alingsashero extends \Modularity\Module
 	public $slug = 'alingsashero';
 	public $supports = array();
 
+	/**
+	 * Base id of the search input. Typesense quick search binds to
+	 * `#input_a-hero__search-form--field`, so the first hero on a page keeps it.
+	 */
+	private const SEARCH_FIELD_ID = 'a-hero__search-form--field';
+
+	/**
+	 * Number of hero search fields rendered during this request (widgets and blocks).
+	 */
+	private static int $searchFieldCount = 0;
+
+	/**
+	 * Id for the next rendered search input. Called from the view so it counts
+	 * heroes actually rendered, not module instances that were only constructed.
+	 *
+	 * @return string
+	 */
+	public static function nextSearchFieldId(): string
+	{
+		self::$searchFieldCount++;
+
+		return self::$searchFieldCount === 1
+			? self::SEARCH_FIELD_ID
+			: self::SEARCH_FIELD_ID . '-' . self::$searchFieldCount;
+	}
+
 	public function init()
 	{
 		$this->nameSingular = __("(A) Hero", 'modularity-alingsashero');
@@ -28,8 +54,9 @@ class alingsashero extends \Modularity\Module
 	{
 		$data = array();
 
+		// getFields() reads the module post's fields as a widget and the block's data as a block.
 		$data = array_merge($data, (array) \Modularity\Helper\FormatObject::camelCase(
-			get_fields($this->ID)
+			$this->getFields()
 		));
 
 		$data['search'] = __('Search', 'modularity-alingsashero');
