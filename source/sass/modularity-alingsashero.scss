@@ -186,21 +186,43 @@
       div.c-group {
         background-color: transparent;
         border: none;
+        border-radius: 0;
+        overflow: visible;
         flex-direction: column;
         gap: .5rem;
 
-        .c-field,
-        .c-field__inner,
-        .c-field input {
+        // One bordered white pill for the input; the submit button is a
+        // separate, solid pill beneath it.
+        .c-field {
           background-color: transparent;
-          border: 2px solid var(--hero-button-border);
+          border: 0;
           border-radius: $hero-search-radius !important;
-          overflow: hidden;
+          overflow: visible;
+
+          &__inner {
+            background-color: #fff;
+            border: 2px solid var(--hero-button-border);
+            border-radius: $hero-search-radius !important;
+            overflow: hidden;
+          }
+
+          input {
+            background-color: transparent;
+            border: 0;
+            border-radius: $hero-search-radius !important;
+          }
         }
 
         .c-button,
         .c-button.a-hero__search-form__submit-icon {
+          align-self: stretch;
+          background-color: var(--hero-button-background);
           border-radius: $hero-search-radius !important;
+          justify-content: center;
+          min-height: calc(var(--base, 8px) * 6);
+          opacity: 1;
+          padding: 0 calc(var(--base, 8px) * 3);
+          width: 100%;
         }
       }
     }
@@ -224,7 +246,7 @@
         }
 
         .c-button {
-          padding: 0 calc(var(--base, 8px)*3) 0 calc(var(--base, 8px)*0.5);
+          padding: 0 calc(var(--base, 8px)*3) 0 calc(var(--base, 8px)*2);
 
           &__label {
             gap: var(--base, 4px);
